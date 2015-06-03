@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using CaveLib.Controller;
+
 namespace CaveProject
 {
     /// <summary>
@@ -21,6 +23,8 @@ namespace CaveProject
     public partial class MainWindow : Window
     {
         public List<Button> YourCollection { get; set; }
+
+        public MainController mainController;
 
         public MainWindow()
         {
@@ -60,6 +64,8 @@ namespace CaveProject
             }
 
             this.DataContext = this;
+
+            mainController = new MainController();
         }
 
         /// <summary>

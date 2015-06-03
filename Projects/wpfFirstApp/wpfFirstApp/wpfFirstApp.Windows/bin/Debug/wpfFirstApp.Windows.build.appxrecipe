@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>WIN-7B20RJMBPO0</Machine>
+    <WindowsUser>ded45</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>eab50402-cd57-4be5-b7b7-815ece808e94</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\wpfFirstApp.Windows.exe">
+      <PackagePath>wpfFirstApp.Windows.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\HighScore.xbf">
+      <PackagePath>HighScore.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\UserControls\FirstControl.xbf">
+      <PackagePath>UserControls\FirstControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\UserControls\GameUserControl.xbf">
+      <PackagePath>UserControls\GameUserControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\wpfFirstApp.Windows.xr.xml">
+      <PackagePath>wpfFirstApp.Windows.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ded45\documents\visual studio 2013\Projects\wpfFirstApp\wpfFirstApp\wpfFirstApp.Windows\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
