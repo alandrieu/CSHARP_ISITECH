@@ -1,11 +1,7 @@
-# CSHARP_ISITECH
-Some project on C# with .NET 4.5
+# CaveProject
 
+WPF Application with .NET 4.5
 
-Projects
-  |- wpfFirstApp/ (Universal Application with WPF and .NET 4.5)
-  |- CaveProject/ (WPF application with .NET 4.5)
-  
 # License :
   
 The MIT License
