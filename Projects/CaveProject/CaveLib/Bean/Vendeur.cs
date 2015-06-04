@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CaveLib.Bean
 {
+    /// <summary>
+    /// Classe pour la gestion des Vendeurs.
+    /// </summary>
     public class Vendeur
     {
         public virtual Guid IdVendeur { get; set; }

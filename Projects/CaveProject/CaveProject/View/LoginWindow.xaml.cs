@@ -13,17 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using CaveLib.Bean;
+using CaveLib.Service;
 
 namespace CaveProject.View
 {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
+    /// Gestion de l'Authentification du vendeur.
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private VendeurService oVendeurService;
+
         public LoginWindow()
         {
             InitializeComponent();
+
+            oVendeurService = new VendeurService();
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)

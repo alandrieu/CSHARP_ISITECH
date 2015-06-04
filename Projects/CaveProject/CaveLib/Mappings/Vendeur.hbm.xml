@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                  assembly="CaveLib"
+                  namespace="CaveLib.Bean">
+
+  <class name="Vendeur" table="vendeurs">
+    <id name="IdVendeur">
+      <generator class="guid" />
+    </id>
+
+    <property name="Name" />
+    <property name="Login" />
+    <property name="Password" />
+  </class>
+
+</hibernate-mapping>

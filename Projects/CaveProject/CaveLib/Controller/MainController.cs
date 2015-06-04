@@ -17,6 +17,8 @@ namespace CaveLib.Controller
         public NHibernate.ISessionFactory sessionsController;
         public NHibernate.ISession session;
 
+        public static MainController CurrentDao{get; set;}
+
         Configuration cfg;
 
         public MainController()
@@ -36,6 +38,30 @@ namespace CaveLib.Controller
 
             for (int i = 0; i < 50; i++ )
                 createProducts();
+
+            for (int i = 0; i < 50; i++)
+                createVendeurs();
+
+            CurrentDao = this;
+        }
+
+        public void createVendeurs()
+        {
+            Random rand = new Random();
+
+            // Create a Product...
+            var vendeur = new Bean.Vendeur
+            {
+                Name = "Some C# Book",
+                Login = "TEST_" + rand.Next(0,55).ToString(),
+                Password = rand.Next().ToString()
+            };
+
+            // And save it to the database
+            session.Save(vendeur);
+            session.Flush();
+
+            // Example http://coding-journal.com/setting-up-nhibernate-with-sqlite-using-visual-studio-2010-and-nuget/
         }
 
         public void createProducts()

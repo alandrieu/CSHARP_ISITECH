@@ -5,20 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 using CaveLib.Bean;
+using CaveLib.Controller;
 
 namespace CaveLib.Service
 {
-    class VendeurService : IService
+    /// <summary>
+    /// Service pour la gestion des Vendeurs en Base de données
+    /// </summary>
+    public class VendeurService : Service.IService
     {
-        public IList<Bean.IBean> GetAll()
+        private MainController currentDao;
+
+        public VendeurService()
         {
-            return null;
+            this.currentDao = MainController.CurrentDao;
         }
 
         public Vendeur FindVendeur(Vendeur oVendeur)
         {
-
             return null;
+        }
+
+        IList<IBean> IService.GetAll()
+        {
+            throw new NotImplementedException();
         }
     }
 }
