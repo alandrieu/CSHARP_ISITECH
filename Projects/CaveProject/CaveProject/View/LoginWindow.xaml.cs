@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using CaveLib.Bean;
+
 namespace CaveProject.View
 {
     /// <summary>
@@ -31,6 +33,7 @@ namespace CaveProject.View
 
         private void ButtonConnect_Click(object sender, RoutedEventArgs e)
         {
+            Vendeur leVendeur = new Vendeur();
 
         }
     }
