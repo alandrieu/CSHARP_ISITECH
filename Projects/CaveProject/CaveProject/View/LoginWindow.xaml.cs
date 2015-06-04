@@ -25,6 +25,11 @@ namespace CaveProject.View
     {
         private VendeurService oVendeurService;
 
+        public event AuthenticatedHandler Authenticated;
+        public EventArgs eventArgs = null;
+
+        public delegate void AuthenticatedHandler(object m, EventArgs eventArgs);
+
         public LoginWindow()
         {
             InitializeComponent();
@@ -48,6 +53,9 @@ namespace CaveProject.View
             IList<Vendeur> lstVendeur = oVendeurService.FindVendeur(leVendeur);
 
             Console.Out.WriteLine(lstVendeur.Count);
+
+            // 
+            //Authenticated(this, eventArgs);
         }
     }
 }
