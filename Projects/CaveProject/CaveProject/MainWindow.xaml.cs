@@ -154,8 +154,8 @@ namespace CaveProject
         {
             View.LoginWindow loginView = new View.LoginWindow();
 
-            loginView.Show();
-
+            //loginView.Show();
+            loginView.ShowDialog();
             //throw new NotImplementedException();
         }
     }

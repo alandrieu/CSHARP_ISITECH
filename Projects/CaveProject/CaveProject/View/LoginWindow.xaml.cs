@@ -41,6 +41,13 @@ namespace CaveProject.View
         {
             Vendeur leVendeur = new Vendeur();
 
+            leVendeur.Login = loginBox.Text;
+
+            leVendeur.Password = passwordBox.Password;
+
+            IList<Vendeur> lstVendeur = oVendeurService.FindVendeur(leVendeur);
+
+            Console.Out.WriteLine(lstVendeur.Count);
         }
     }
 }

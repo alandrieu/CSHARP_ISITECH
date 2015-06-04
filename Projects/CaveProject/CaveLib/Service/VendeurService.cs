@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using CaveLib.Bean;
 using CaveLib.Controller;
+using NHibernate;
+using NHibernate.Criterion;
 
 namespace CaveLib.Service
 {
@@ -21,13 +23,34 @@ namespace CaveLib.Service
             this.currentDao = MainController.CurrentDao;
         }
 
-        public Vendeur FindVendeur(Vendeur oVendeur)
+        public IList<Bean.Vendeur> FindVendeur(Vendeur oVendeur)
         {
-            return null;
+            // Note that we do not use the table name specified
+            // in the mapping, but the class name, which is a nice
+            // abstraction that comes with NHibernate
+            IQuery q = currentDao.session.CreateQuery("FROM Vendeur");
+            var list = q.List<Bean.Vendeur>();
+
+            // List all the entries' names
+            list.ToList().ForEach(p => Console.WriteLine(p.Name));
+
+            //
+            Console.Out.WriteLine("Next : " + Environment.NewLine);
+
+            //var users = currentDao.sessionsController.Query<Vendeur>()
+            //       .Where(x => x.UserName == "Abcd" && u.Password == "123456");
+            //return null;
+
+            IList<Bean.Vendeur> users = currentDao.session.CreateCriteria<Vendeur>()
+                   .Add(Restrictions.Eq("Name", oVendeur.Login))
+                   .List<Vendeur>();
+
+            return users;
         }
 
         IList<IBean> IService.GetAll()
         {
+
             throw new NotImplementedException();
         }
     }

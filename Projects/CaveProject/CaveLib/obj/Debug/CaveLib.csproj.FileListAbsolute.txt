@@ -39,3 +39,4 @@ C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Cav
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\NHibernate.xml
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\obj\Debug\CaveLib.dll
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\obj\Debug\CaveLib.pdb
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\obj\Debug\CaveLib.csprojResolveAssemblyReference.cache

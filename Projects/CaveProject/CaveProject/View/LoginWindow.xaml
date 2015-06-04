@@ -29,10 +29,10 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Column="0" Grid.Row="0" FontSize="14">Login</TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="14" Width="120"/>
+                <TextBox x:Name="loginBox" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="14" Width="120"/>
 
                 <TextBlock Grid.Column="0" Grid.Row="1" FontSize="14">Password</TextBlock>
-                <PasswordBox Grid.Column="1" Grid.Row="1" Width="120" FontSize="14"/>
+                <PasswordBox x:Name="passwordBox" Grid.Column="1" Grid.Row="1" Width="120" FontSize="14"/>
 
                 <Button Grid.ColumnSpan="2147483647" Grid.Row="2" Click="ButtonConnect_Click" FontSize="14">Connect</Button>
                 <Button Grid.ColumnSpan="2147483647" Grid.Row="3" Click="ButtonExit_Click" FontSize="14">Exit</Button>
