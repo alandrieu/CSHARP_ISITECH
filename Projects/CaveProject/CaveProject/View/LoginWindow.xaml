@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="LoginWindow" Height="500" Width="500" ResizeMode="NoResize">
 
+    <!-- Grid Principal -->
     <Grid x:Name="myGrid" RenderTransformOrigin="0.5,0.5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -13,29 +14,45 @@
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
 
+        <!-- Title -->
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" Grid.Row="0" Grid.Column="0"> Login Menu</TextBlock>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Height="Auto" Name="stackPanel4" Width="Auto" Grid.Row="1">
+        <!-- Container des informations de connexion -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Name="stackPanel4" Grid.Row="1" Grid.Column="0">
             <Grid x:Name="myGridText" RenderTransformOrigin="0.5,0.5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" MinWidth="305" />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
+                    <RowDefinition MinHeight="20"/>
                     <RowDefinition />
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition MinHeight="20"/>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
+                
+                <!-- Login Informations -->
                 <TextBlock Grid.Column="0" Grid.Row="0" FontSize="14">Login</TextBlock>
-                <TextBox x:Name="loginBox" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="14" Width="120"/>
+                <TextBox x:Name="loginBox" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="14" />
 
+                <!-- Password Informations -->
                 <TextBlock Grid.Column="0" Grid.Row="1" FontSize="14">Password</TextBlock>
-                <PasswordBox x:Name="passwordBox" Grid.Column="1" Grid.Row="1" Width="120" FontSize="14"/>
+                <PasswordBox x:Name="passwordBox" Grid.Column="1" Grid.Row="1" FontSize="14"/>
 
-                <Button Grid.ColumnSpan="2147483647" Grid.Row="2" Click="ButtonConnect_Click" FontSize="14">Connect</Button>
-                <Button Grid.ColumnSpan="2147483647" Grid.Row="3" Click="ButtonExit_Click" FontSize="14">Exit</Button>
+                  <!-- Définir les Boutons de l'interface Exit / Connect -->
+                <Button Grid.ColumnSpan="2147483647" Grid.Row="3" Click="ButtonConnect_Click" FontSize="14">Connect</Button>
+                <Button Grid.ColumnSpan="2147483647" Grid.Row="4" Click="ButtonExit_Click" FontSize="14">Exit</Button>
+                
+                <!-- Test Informations -->
+                <TextBlock Grid.ColumnSpan="2147483647" Grid.Row="6" FontSize="14">Example User :</TextBlock>
+                <TextBlock Grid.ColumnSpan="2147483647" Grid.Row="7" FontSize="14">Login : ISITECH</TextBlock>
+                <TextBlock Grid.ColumnSpan="2147483647" Grid.Row="8" FontSize="14">Password : ISITECH</TextBlock>
             </Grid>
         </StackPanel>
     </Grid>

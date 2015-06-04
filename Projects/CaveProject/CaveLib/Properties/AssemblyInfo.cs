@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CaveLib")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Alandrieu Hibernate example")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("alandrieu")]
 [assembly: AssemblyProduct("CaveLib")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright ©  2015 alandrieu")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 using CaveLib.Bean;
 using CaveLib.Service;
+using CaveLib.Utils;
 
 namespace CaveProject.View
 {
@@ -23,12 +24,10 @@ namespace CaveProject.View
     /// </summary>
     public partial class LoginWindow : Window
     {
+        // Permet de récupréer les informations sur la base de données pour la table Vendeur
         private VendeurService oVendeurService;
 
-        public event AuthenticatedHandler Authenticated;
-        public EventArgs eventArgs = null;
-
-        public delegate void AuthenticatedHandler(object m, EventArgs eventArgs);
+        public Vendeur currentVendeur;
 
         public LoginWindow()
         {
@@ -37,25 +36,47 @@ namespace CaveProject.View
             oVendeurService = new VendeurService();
         }
 
+        /// <summary>
+        /// Fermeture de l'application d'identification
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Lors d'une tentative de connexion, on vérifi les identifiants de l'utilisateur.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonConnect_Click(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(loginBox.Text) || String.IsNullOrEmpty(passwordBox.Password))
+                return;
+
             Vendeur leVendeur = new Vendeur();
 
             leVendeur.Login = loginBox.Text;
 
-            leVendeur.Password = passwordBox.Password;
+            leVendeur.Password = Hashing.SHA512(passwordBox.Password);
 
             IList<Vendeur> lstVendeur = oVendeurService.FindVendeur(leVendeur);
 
+            // Debug
             Console.Out.WriteLine(lstVendeur.Count);
 
-            // 
-            //Authenticated(this, eventArgs);
+            if(lstVendeur.Count == 1)
+            {
+                currentVendeur = lstVendeur.ElementAt<Vendeur>(0);
+                this.Close();
+            }
+            else
+            {
+                loginBox.Foreground = Brushes.Red;
+                passwordBox.Foreground = Brushes.Red;
+            }
         }
     }
 }

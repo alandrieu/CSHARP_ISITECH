@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CaveProject")]
-[assembly: AssemblyDescription("WPF Application")]
+[assembly: AssemblyDescription("WPF Application used with CaveLib assembly")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("alandrieu")]
 [assembly: AssemblyProduct("CaveProject")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright ©  2015 Alandrieu")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

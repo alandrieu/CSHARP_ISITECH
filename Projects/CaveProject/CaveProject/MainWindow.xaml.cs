@@ -17,6 +17,7 @@ using CaveLib.Controller;
 using CaveLib.Model.Collection;
 using CaveLib.Model;
 using CaveLib.Bean;
+using CaveProject.View;
 using System.Collections.Specialized;
 //using System.Collections.Specialized;
 
@@ -27,11 +28,15 @@ namespace CaveProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Button> YourCollection { get; set; }
+        public List<Button> ButtonCollection { get; set; }
 
         private MainController mainController;
 
         private EcObservableCollection<ProductView> products;
+
+        private Context context;
+
+        private LoginWindow loginView;
 
         public MainWindow()
         {
@@ -43,6 +48,42 @@ namespace CaveProject
             mainController = new MainController();
 
             this.InitHibernate();
+
+            context = new Context();
+
+            LaunchAuthMenu();
+        }
+
+        private void LaunchAuthMenu()
+        {
+            loginView = new LoginWindow();
+
+            //loginView.Authenticated += isAuthenticated;
+            loginView.Closing += loginViewIsClosed;
+
+            //loginView.Show();
+            loginView.ShowDialog();
+        }
+
+
+        /// <summary>
+        /// Méthode de gestion de la fermeture de 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void loginViewIsClosed(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Si le module d'authentification n'a pas trouvé un vendeur on ferme l'application
+            if (loginView.currentVendeur == null)
+                this.Close();
+            else
+            {
+                // Récupération de l'utilisateur Courant
+                context.Vendeur = loginView.currentVendeur;
+
+                // Mise à jour du menu
+                headerAccountName.Header = context.Vendeur.Name;
+            }
         }
 
         /// <summary>
@@ -109,7 +150,7 @@ namespace CaveProject
 
         public void CreateButton()
         {
-            YourCollection = new List<Button>();
+            ButtonCollection = new List<Button>();
 
             IDictionary<String, String> oCollection = new Dictionary<String, String>();
 
@@ -130,7 +171,7 @@ namespace CaveProject
                 else
                     objButton.Click += Button_Click;
 
-                YourCollection.Add(objButton);
+                ButtonCollection.Add(objButton);
                 //YourCollection.Add(new Button() { Height = 25, Width = 25 });
             }
 

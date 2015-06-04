@@ -4,13 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Hibernate Lib
 using NHibernate.Collection;
-
 using NHibernate.Cfg;
-//using NHibernate.Tool.hbm2ddl;
+
+//
+using CaveLib.Utils;
 
 namespace CaveLib.Controller
 {
+    /// <summary>
+    /// Le MainController créer toutes les connexions avec la Base de données et initialise Hibernate.
+    /// Il peuple aussi la BDD en Vendeur, Commande, Bouteille, Client.
+    /// </summary>
     public class MainController
     {
 
@@ -36,40 +42,61 @@ namespace CaveLib.Controller
 
             session = sessionsController.OpenSession();
 
-            for (int i = 0; i < 50; i++ )
-                createProducts();
+            for (int i = 0; i < 10; i++ )
+                createProducts(i);
 
-            for (int i = 0; i < 50; i++)
-                createVendeurs();
+            for (int i = 0; i < 10; i++)
+                createVendeurs(i);
 
             CurrentDao = this;
+
+            // Créer un utilisateur par défaut
+            createADefaultVendeur();
         }
 
-        public void createVendeurs()
+        /// <summary>
+        /// Méthode qui créer un utilisateur par défaut pour la démonstration
+        /// </summary>
+        private void createADefaultVendeur()
         {
             Random rand = new Random();
 
             // Create a Product...
             var vendeur = new Bean.Vendeur
             {
-                Name = "Some C# Book",
-                Login = "TEST_" + rand.Next(0,55).ToString(),
+                Name = "Isitech Account",
+                Login = "ISITECH",
+                Password = Hashing.SHA512("ISITECH")
+            };
+
+            // And save it to the database
+            session.Save(vendeur);
+            session.Flush();
+        }
+
+        public void createVendeurs(int cpt)
+        {
+            Random rand = new Random();
+
+            // Create a Product...
+            var vendeur = new Bean.Vendeur
+            {
+                Name = "Alandrieu",
+                Login = "USER#" + cpt.ToString(),
                 Password = rand.Next().ToString()
             };
 
             // And save it to the database
             session.Save(vendeur);
             session.Flush();
-
-            // Example http://coding-journal.com/setting-up-nhibernate-with-sqlite-using-visual-studio-2010-and-nuget/
         }
 
-        public void createProducts()
+        public void createProducts(int cpt)
         {
             // Create a Product...
             var product = new Bean.Product
             {
-                Name = "Some C# Book",
+                Name = "Reference#" + cpt.ToString(),
                 Price = 500,
                 Category = "Books"
             };
@@ -77,9 +104,9 @@ namespace CaveLib.Controller
             // And save it to the database
             session.Save(product);
             session.Flush();
-
-            // Example http://coding-journal.com/setting-up-nhibernate-with-sqlite-using-visual-studio-2010-and-nuget/
         }
+
+ 
 
     }
 }

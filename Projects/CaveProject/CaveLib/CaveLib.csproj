@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconeApp.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Iesi.Collections">
       <HintPath>..\CaveProject\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
@@ -60,6 +63,7 @@
     <Compile Include="Bean\Product.cs" />
     <Compile Include="Bean\Stock.cs" />
     <Compile Include="Bean\Vendeur.cs" />
+    <Compile Include="Controller\Context.cs" />
     <Compile Include="Controller\MainController.cs" />
     <Compile Include="Dao\Dao.cs" />
     <Compile Include="Model\Collection\EcObservableCollection.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="Service\CommandeService.cs" />
     <Compile Include="Service\IService.cs" />
     <Compile Include="Service\VendeurService.cs" />
+    <Compile Include="Utils\Hashing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -84,6 +89,7 @@
     <EmbeddedResource Include="Mappings\Vendeur.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="iconeApp.ico" />
     <Content Include="SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
