@@ -39,7 +39,7 @@ namespace CaveProject
 
             // Création des Button
             this.CreateButton();
-            
+
             mainController = new MainController();
 
             this.InitHibernate();
@@ -106,13 +106,14 @@ namespace CaveProject
             }
 
         }
-    
-    public void CreateButton()
+
+        public void CreateButton()
         {
             YourCollection = new List<Button>();
 
             IDictionary<String, String> oCollection = new Dictionary<String, String>();
 
+            oCollection.Add("Login", "");
             oCollection.Add("Game", "");
             oCollection.Add("Google", "https://www.google.fr/images/srpr/logo11w.png");
             oCollection.Add("Vindictus", "http://www.google.fr/url?source=imglanding&ct=img&q=http://i.ytimg.com/vi/tyuPP0DSwnc/maxresdefault.jpg&sa=X&ei=N09tVd2QO4GwUYXggJgD&ved=0CAkQ8wc&usg=AFQjCNFmmay17iB-XVidfyBd9LVrGjr5Uw");
@@ -136,7 +137,10 @@ namespace CaveProject
                 //Dummy Data for Demo 
                 Button objButton = new Button() { Height = 40, Width = 105, Name = entry.Key, Content = entry.Key };
 
-                objButton.Click += Button_Click;
+                if (objButton.Name.Equals("Login"))
+                    objButton.Click += ButtonLogin_Click;
+                else
+                    objButton.Click += Button_Click;
 
                 YourCollection.Add(objButton);
                 //YourCollection.Add(new Button() { Height = 25, Width = 25 });
@@ -144,6 +148,15 @@ namespace CaveProject
 
             this.DataContext = this;
 
+        }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            View.LoginWindow loginView = new View.LoginWindow();
+
+            loginView.Show();
+
+            //throw new NotImplementedException();
         }
     }
 }

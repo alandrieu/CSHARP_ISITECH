@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,24 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CaveProject.View
 {
     /// <summary>
-    /// Interaction logic for DataSetView.xaml
+    /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class DataSetView : UserControl
+    public partial class LoginWindow : Window
     {
-        public DataSet oDataSet;
-
-        public DataSetView()
+        public LoginWindow()
         {
             InitializeComponent();
+        }
 
-            // 
-            oDataSet = new DataSet();
+        private void ButtonExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ButtonConnect_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
