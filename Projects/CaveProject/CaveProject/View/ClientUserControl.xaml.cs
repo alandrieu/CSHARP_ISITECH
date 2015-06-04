@@ -24,17 +24,17 @@ using System.Collections.Specialized;
 namespace CaveProject.View
 {
     /// <summary>
-    /// Interaction logic for BouteilleUserControl.xaml
+    /// Interaction logic for ClientUserControl.xaml
     /// </summary>
-    public partial class BouteilleUserControl : UserControl
+    public partial class ClientUserControl : UserControl
     {
         private MainController mainController;
 
-        private EcObservableCollection<BouteilleView> bouteilles;
+        private EcObservableCollection<ClientView> clients;
 
         private Context context;
 
-        public BouteilleUserControl()
+        public ClientUserControl()
         {
             InitializeComponent();
 
@@ -48,48 +48,48 @@ namespace CaveProject.View
         {
             using (var session = mainController.sessionsController.OpenSession())
             {
-                var criteria = session.CreateCriteria<Bouteille>();
-                bouteilles = new EcObservableCollection<BouteilleView>();
-                foreach (Bouteille c in criteria.List<Bouteille>())
-                    bouteilles.Add(new BouteilleView(c));
+                var criteria = session.CreateCriteria<Client>();
+                clients = new EcObservableCollection<ClientView>();
+                foreach (Client c in criteria.List<Client>())
+                    clients.Add(new ClientView(c));
             }
 
-            bouteilles.CollectionChanged +=
-                new NotifyCollectionChangedEventHandler(bouteilles_CollectionChanged);
-            bouteilles.ItemChanged +=
-                new EcObservableCollection<BouteilleView>.EcObservableCollectionItemChangedEventHandler(bouteilles_ItemChanged);
-            dataGrid1.ItemsSource = bouteilles;
+            clients.CollectionChanged +=
+                new NotifyCollectionChangedEventHandler(clients_CollectionChanged);
+            clients.ItemChanged +=
+                new EcObservableCollection<ClientView>.EcObservableCollectionItemChangedEventHandler(clients_ItemChanged);
+            dataGrid1.ItemsSource = clients;
         }
 
-        public void bouteilles_ItemChanged(object sender, EcObservableCollectionItemChangedEventArgs<BouteilleView> args)
+        public void clients_ItemChanged(object sender, EcObservableCollectionItemChangedEventArgs<ClientView> args)
         {
             using (var session = mainController.sessionsController.OpenSession())
             {
-                session.SaveOrUpdate(args.Item.InnerBouteille);
+                session.SaveOrUpdate(args.Item.InnerClient);
                 session.Flush();
             }
         }
 
-        public void bouteilles_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        public void clients_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             using (var session = mainController.sessionsController.OpenSession())
             {
                 switch (e.Action)
                 {
                     case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
-                        foreach (BouteilleView c in e.OldItems)
+                        foreach (ClientView c in e.OldItems)
                         {
-                            session.Delete(c.InnerBouteille);
+                            session.Delete(c.InnerClient);
                             session.Flush();
                         }
                         break;
                     case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
-                        foreach (BouteilleView c in e.NewItems)
-                            session.Save(c.InnerBouteille);
+                        foreach (ClientView c in e.NewItems)
+                            session.Save(c.InnerClient);
                         break;
                     default:
-                        foreach (BouteilleView c in e.OldItems)
-                            session.SaveOrUpdate(c.InnerBouteille);
+                        foreach (ClientView c in e.OldItems)
+                            session.SaveOrUpdate(c.InnerClient);
                         break;
                 }
             }

@@ -3,14 +3,14 @@
                   assembly="CaveLib"
                   namespace="CaveLib.Bean">
 
-  <class name="Product" table="products">
-    <id name="Id">
+  <class name="Bouteille" table="bouteilles">
+    <id name="IdBouteille">
       <generator class="guid" />
     </id>
 
     <property name="Name" />
     <property name="Category" />
-    <property name="Price" />
+    <property name="PrixU" />
   </class>
 
 </hibernate-mapping>

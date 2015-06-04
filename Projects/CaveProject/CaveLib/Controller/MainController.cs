@@ -42,11 +42,14 @@ namespace CaveLib.Controller
 
             session = sessionsController.OpenSession();
 
-            for (int i = 0; i < 10; i++ )
-                createProducts(i);
-
             for (int i = 0; i < 10; i++)
                 createVendeurs(i);
+
+            for (int i = 0; i < 10; i++)
+                createBouteilles(i);
+
+            for (int i = 0; i < 10; i++)
+                createCustomers(i);
 
             CurrentDao = this;
 
@@ -61,7 +64,7 @@ namespace CaveLib.Controller
         {
             Random rand = new Random();
 
-            // Create a Product...
+            // Créer un Vendeur
             var vendeur = new Bean.Vendeur
             {
                 Name = "Isitech Account",
@@ -74,16 +77,16 @@ namespace CaveLib.Controller
             session.Flush();
         }
 
-        public void createVendeurs(int cpt)
+        private void createVendeurs(int cpt)
         {
             Random rand = new Random();
 
-            // Create a Product...
+            // Créer un Vendeur
             var vendeur = new Bean.Vendeur
             {
                 Name = "Alandrieu",
                 Login = "USER#" + cpt.ToString(),
-                Password = rand.Next().ToString()
+                Password = Hashing.SHA512(rand.Next().ToString())
             };
 
             // And save it to the database
@@ -91,21 +94,34 @@ namespace CaveLib.Controller
             session.Flush();
         }
 
-        public void createProducts(int cpt)
+        private void createBouteilles(int cpt)
         {
-            // Create a Product...
-            var product = new Bean.Product
+            // Créer une Bouteille
+            var bouteille = new Bean.Bouteille
             {
-                Name = "Reference#" + cpt.ToString(),
-                Price = 500,
-                Category = "Books"
+                Name = "Château Haut Vigneau Pessac-Léognan#" + cpt.ToString(),
+                PrixU = 56,
+                Category = "Vin Rouge"
             };
 
             // And save it to the database
-            session.Save(product);
+            session.Save(bouteille);
             session.Flush();
         }
 
+        private void createCustomers(int cpt)
+        {
+            // Créer une Client
+            var client = new Bean.Client
+            {
+                FirstName = "Jean#" + cpt.ToString(),
+                LastName = "Du Lac"
+            };
+
+            // And save it to the database
+            session.Save(client);
+            session.Flush();
+        }
  
 
     }

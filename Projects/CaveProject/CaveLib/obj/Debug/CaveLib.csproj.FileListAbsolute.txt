@@ -28,8 +28,8 @@ C:\Users\ded45\Documents\Visual Studio 2013\Projects\tt\CSHARP_ISITECH\Projects\
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\hibernate.cfg.xml
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\SQLite.Interop.dll
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\System.Data.SQLite.dll
-C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\Mappings\Product.hbm.xml
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\Mappings\Vendeur.hbm.xml
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\Mappings\Bouteille.hbm.xml
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\CaveLib.dll.config
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\CaveLib.dll
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\CaveLib.pdb
@@ -39,4 +39,4 @@ C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Cav
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\NHibernate.xml
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\obj\Debug\CaveLib.dll
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\obj\Debug\CaveLib.pdb
-C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\obj\Debug\CaveLib.csprojResolveAssemblyReference.cache
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\CaveProject\CaveLib\bin\Debug\Mappings\Client.hbm.xml

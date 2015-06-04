@@ -9,7 +9,7 @@ namespace CaveLib.Bean
     /// <summary>
     /// Classe pour la gestion des Vendeurs.
     /// </summary>
-    public class Vendeur
+    public class Vendeur : IBean
     {
         public virtual Guid IdVendeur { get; set; }
         public virtual string Name { get; set; }

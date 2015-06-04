@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace CaveLib.Bean
 {
-    public class Product
+    /// <summary>
+    /// Classe pour la gestion des Produits.
+    /// </summary>
+    public class Product : IBean
     {
-        public virtual Guid Id { get; set; }
-        public virtual string Name { get; set; }
-        public virtual string Category { get; set; }
-        public virtual int Price { get; set; }
 
     }
 }

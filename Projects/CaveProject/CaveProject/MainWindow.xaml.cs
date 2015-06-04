@@ -39,12 +39,7 @@ namespace CaveProject
         {
             InitializeComponent();
 
-            // Création des Button
-            //this.CreateButton();
-
             mainController = new MainController();
-
-            //this.InitHibernate();
 
             context = new Context();
 
@@ -64,19 +59,20 @@ namespace CaveProject
             //loginView.Authenticated += isAuthenticated;
             loginView.Closing += loginViewIsClosed;
 
-            //loginView.Show();
+            /*
+             MODE RELEASE
+             */
             loginView.ShowDialog();
 
             /*
              MODE DEBUG
              */
-            //// Récupération de l'utilisateur Courant
-            //context.Vendeur = new Vendeur() { Name ="ISitech Account"};
+            // Récupération de l'utilisateur Courant
+            //context.Vendeur = new Vendeur() { Name = "Isitech Account" };
 
-            //// Mise à jour du menu
+            // Mise à jour du menu
             //headerAccountName.Header = context.Vendeur.Name;
         }
-
 
         /// <summary>
         /// Méthode de gestion de la fermeture de 
@@ -99,16 +95,6 @@ namespace CaveProject
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Fermeture de l'application
         /// </summary>
         /// <param name="sender"></param>
@@ -118,22 +104,66 @@ namespace CaveProject
             this.Close();
         }
         
+        /// <summary>
+        /// Afficher l'ensemble des Bouteilles de la base de données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MenuItemBouteille_Click(object sender, RoutedEventArgs e)
         {
-            Console.Out.WriteLine("CLICK");
+            this.OpenNewTab(new BouteilleUserControl(), "Liste des Bouteilles");
+        }
 
+        /// <summary>
+        /// Afficher l'ensemble des Vendeurs de la base de données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemVendeur_Click(object sender, RoutedEventArgs e)
+        {
+            this.OpenNewTab(new VendeurUserControl(), "Liste des Vendeurs");
+        }
+
+        /// <summary>
+        /// Afficher l'ensemble des Clients de la base de données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemClient_Click(object sender, RoutedEventArgs e)
+        {
+            this.OpenNewTab(new ClientUserControl(), "Liste des Clients");
+        }
+
+        /// <summary>
+        /// Afficher l'ensemble des Commandes de la base de données
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemCommande_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+            //this.OpenNewTab(new CommandeUserControl(), "Liste des Commandes");
+        }
+
+        /// <summary>
+        /// Ouvre un nouvel onglet dans le tabControl avec comme Contenu un UserControle et un Titre.
+        /// </summary>
+        /// <param name="aUserControl"></param>
+        /// <param name="header"></param>
+        private void OpenNewTab(UserControl aUserControl, String header)
+        {
             TabItem item = null;
             Grid grid = null;
-            
+
             try
             {
                 // Creating the Grid (create Canvas or StackPanel or other panel here)
-                grid = new Grid() { HorizontalAlignment=HorizontalAlignment.Stretch, VerticalAlignment=VerticalAlignment.Stretch};
+                grid = new Grid() { HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch };
 
-                grid.Children.Add(new BouteilleUserControl());
+                grid.Children.Add(aUserControl);
 
                 item = new CloseableTabItem();
-                item.Header = "Liste des Bouteilles";
+                item.Header = header;
                 //item.Header = "Hello, this is the new tab item!";
                 item.Content = grid;            // OR : Add a UserControl containing all controls you like, OR use a ContentTemplate
 
@@ -149,7 +179,6 @@ namespace CaveProject
                 grid = null;
                 item = null;
             }
-            
         }
         
     }

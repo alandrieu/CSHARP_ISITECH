@@ -9,59 +9,59 @@ using System.ComponentModel;
 
 namespace CaveLib.Model
 {
-    public class ProductView : INotifyPropertyChanged
+    public class VendeurView : INotifyPropertyChanged
     {
-        private Product _product;
+        private Vendeur _vendeur;
 
-        public Product InnerProduct { get { return _product; } }
+        public Vendeur InnerVendeur { get { return _vendeur; } }
 
-        public ProductView()
+        public VendeurView()
         {
-            _product = new Product();
+            _vendeur = new Vendeur();
         }
 
-        public ProductView(Product product)
+        public VendeurView(Vendeur vendeur)
         {
-            _product = product;
+            _vendeur = vendeur;
         }
 
-        public virtual Guid Id
+        public virtual Guid IdVendeur
         {
-            get { return _product.Id; }
+            get { return _vendeur.IdVendeur; }
             set
             {
-                _product.Id = value;
-                NotifyPropertyChanged("Id");
+                _vendeur.IdVendeur = value;
+                NotifyPropertyChanged("IdVendeur");
             }
         }
 
         public virtual string Name
         {
-            get { return _product.Name; }
+            get { return _vendeur.Name; }
             set
             {
-                _product.Name = value;
+                _vendeur.Name = value;
                 NotifyPropertyChanged("Name");
             }
         }
 
-        public virtual string Category
+        public virtual string Login
         {
-            get { return _product.Category; }
+            get { return _vendeur.Login; }
             set
             {
-                _product.Category = value;
-                NotifyPropertyChanged("Category");
+                _vendeur.Login = value;
+                NotifyPropertyChanged("Login");
             }
         }
 
-        public virtual int Price
+        public virtual string Password
         {
-            get { return _product.Price; }
+            get { return _vendeur.Password; }
             set
             {
-                _product.Price = value;
-                NotifyPropertyChanged("Price");
+                _vendeur.Password = value;
+                NotifyPropertyChanged("Password");
             }
         }
 

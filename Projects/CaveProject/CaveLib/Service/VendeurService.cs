@@ -23,6 +23,11 @@ namespace CaveLib.Service
             this.currentDao = MainController.CurrentDao;
         }
 
+        /// <summary>
+        /// Retrouver un et un seul Vendeur (via son Login)
+        /// </summary>
+        /// <param name="oVendeur"></param>
+        /// <returns></returns>
         public IList<Bean.Vendeur> FindVendeur(Vendeur oVendeur)
         {
             // Note that we do not use the table name specified

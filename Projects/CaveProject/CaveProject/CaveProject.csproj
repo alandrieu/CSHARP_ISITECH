@@ -65,6 +65,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CustomItem\CloseableTabItem.cs" />
+    <Compile Include="View\ClientUserControl.xaml.cs">
+      <DependentUpon>ClientUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VendeurUserControl.xaml.cs">
+      <DependentUpon>VendeurUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\BouteilleUserControl.xaml.cs">
       <DependentUpon>BouteilleUserControl.xaml</DependentUpon>
     </Compile>
@@ -86,6 +92,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ClientUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\VendeurUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\BouteilleUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

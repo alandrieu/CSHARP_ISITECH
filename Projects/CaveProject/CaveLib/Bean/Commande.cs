@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CaveLib.Bean
 {
-    class Commande
+
+    /// <summary>
+    /// Classe pour la gestion des Commandes.
+    /// </summary>
+    class Commande : IBean
     {
         public int IdCmd {get; private set;}
 

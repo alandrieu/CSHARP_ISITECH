@@ -4,9 +4,9 @@ WPF Application with .NET 4.5
 
 # Sources:
 
-<http://www.wpftutorial.net/Menus.html>
+<http://www.wpftutorial.net/>
 <http://stackoverflow.com/>
-< http://coding-journal.com/setting-up-nhibernate-with-sqlite-using-visual-studio-2010-and-nuget/>
+<http://coding-journal.com/>
 
 # License :
   

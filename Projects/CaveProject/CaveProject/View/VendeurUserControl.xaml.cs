@@ -24,17 +24,17 @@ using System.Collections.Specialized;
 namespace CaveProject.View
 {
     /// <summary>
-    /// Interaction logic for BouteilleUserControl.xaml
+    /// Interaction logic for VendeurUserControl.xaml
     /// </summary>
-    public partial class BouteilleUserControl : UserControl
+    public partial class VendeurUserControl : UserControl
     {
         private MainController mainController;
 
-        private EcObservableCollection<BouteilleView> bouteilles;
+        private EcObservableCollection<VendeurView> vendeurs;
 
         private Context context;
 
-        public BouteilleUserControl()
+        public VendeurUserControl()
         {
             InitializeComponent();
 
@@ -48,48 +48,48 @@ namespace CaveProject.View
         {
             using (var session = mainController.sessionsController.OpenSession())
             {
-                var criteria = session.CreateCriteria<Bouteille>();
-                bouteilles = new EcObservableCollection<BouteilleView>();
-                foreach (Bouteille c in criteria.List<Bouteille>())
-                    bouteilles.Add(new BouteilleView(c));
+                var criteria = session.CreateCriteria<Vendeur>();
+                vendeurs = new EcObservableCollection<VendeurView>();
+                foreach (Vendeur c in criteria.List<Vendeur>())
+                    vendeurs.Add(new VendeurView(c));
             }
 
-            bouteilles.CollectionChanged +=
-                new NotifyCollectionChangedEventHandler(bouteilles_CollectionChanged);
-            bouteilles.ItemChanged +=
-                new EcObservableCollection<BouteilleView>.EcObservableCollectionItemChangedEventHandler(bouteilles_ItemChanged);
-            dataGrid1.ItemsSource = bouteilles;
+            vendeurs.CollectionChanged +=
+                new NotifyCollectionChangedEventHandler(vendeurs_CollectionChanged);
+            vendeurs.ItemChanged +=
+                new EcObservableCollection<VendeurView>.EcObservableCollectionItemChangedEventHandler(vendeurs_ItemChanged);
+            dataGrid1.ItemsSource = vendeurs;
         }
 
-        public void bouteilles_ItemChanged(object sender, EcObservableCollectionItemChangedEventArgs<BouteilleView> args)
+        public void vendeurs_ItemChanged(object sender, EcObservableCollectionItemChangedEventArgs<VendeurView> args)
         {
             using (var session = mainController.sessionsController.OpenSession())
             {
-                session.SaveOrUpdate(args.Item.InnerBouteille);
+                session.SaveOrUpdate(args.Item.InnerVendeur);
                 session.Flush();
             }
         }
 
-        public void bouteilles_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        public void vendeurs_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             using (var session = mainController.sessionsController.OpenSession())
             {
                 switch (e.Action)
                 {
                     case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
-                        foreach (BouteilleView c in e.OldItems)
+                        foreach (VendeurView c in e.OldItems)
                         {
-                            session.Delete(c.InnerBouteille);
+                            session.Delete(c.InnerVendeur);
                             session.Flush();
                         }
                         break;
                     case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
-                        foreach (BouteilleView c in e.NewItems)
-                            session.Save(c.InnerBouteille);
+                        foreach (VendeurView c in e.NewItems)
+                            session.Save(c.InnerVendeur);
                         break;
                     default:
-                        foreach (BouteilleView c in e.OldItems)
-                            session.SaveOrUpdate(c.InnerBouteille);
+                        foreach (VendeurView c in e.OldItems)
+                            session.SaveOrUpdate(c.InnerVendeur);
                         break;
                 }
             }

@@ -11,18 +11,23 @@ namespace CaveProject.CustomItem
 {
     public class CloseableTabItem : TabItem
     {
+        TabCloseButton closeButton;
+        DockPanel dockPanel;
+
         public void SetHeader(UIElement header)
         {
             // Container for header controls
-            var dockPanel = new DockPanel();
+            dockPanel = new DockPanel();
             dockPanel.Children.Add(header);
 
             // Close button to remove the tab
-            var closeButton = new TabCloseButton();
+            closeButton = new TabCloseButton();
             closeButton.Click +=
                 (sender, e) =>
                 {
-                    var tabControl = Parent as ItemsControl;
+                    ItemsControl tabControl = Parent as ItemsControl;
+
+                    Console.Out.WriteLine("click_item");
                     tabControl.Items.Remove(this);
                 };
             dockPanel.Children.Add(closeButton);

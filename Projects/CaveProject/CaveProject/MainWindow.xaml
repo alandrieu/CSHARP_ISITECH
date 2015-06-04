@@ -15,16 +15,16 @@
                 <MenuItem Header="_Exit" Click="MenuItemExit_Click"/>
             </MenuItem>
             <MenuItem Header="_Clients">
-                <MenuItem Header="_Consulter"/>
+                <MenuItem Header="_Consulter" Click="MenuItemClient_Click"/>
             </MenuItem>
             <MenuItem Header="_Articles">
                 <MenuItem Header="_Bouteille" Click="MenuItemBouteille_Click"/>
             </MenuItem>
             <MenuItem Header="_Commandes">
-                <MenuItem Header="_Consulter"/>
+                <MenuItem Header="_Consulter" Click="MenuItemCommande_Click"/>
             </MenuItem>
             <MenuItem Header="_Vendeurs">
-                <MenuItem Header="_Consulter"/>
+                <MenuItem Header="_Consulter" Click="MenuItemVendeur_Click"/>
             </MenuItem>
         </Menu>
 
@@ -33,36 +33,25 @@
             <Image MaxHeight="100" MaxWidth="100" Source="./Ressources/iconeApp.ico"></Image>
             <TextBlock FontSize="72">Ma Cave</TextBlock>
         </StackPanel>
-        
+
         <!--<StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center">-->
-            <!-- Grid Principal -->
-            <Grid DockPanel.Dock="Top" x:Name="myGrid" >
-                <Grid.ColumnDefinitions>
+        <!-- Grid Principal -->
+        <Grid DockPanel.Dock="Top" x:Name="myGrid" >
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition MaxWidth="10"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition MaxWidth="10"/>
             </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
                 <TabControl x:Name="tabControl" TabStripPlacement="Top" Margin="0, 0, 0, 10">
-                    <TabItem Name="backgroundcolor" Header="Background">
-                        <TabItem.Content>Background property information goes here.</TabItem.Content>
-                    </TabItem>
-
-                    <TabItem Name="foregroundcolor" Header="Foreground">
-                        <TabItem.Content>Foreground property information goes here.</TabItem.Content>
-                    </TabItem>
-
-                    <TabItem Name="bordercolor" Header="BorderColor">
-                        <TabItem.Content>Border color property information goes here.</TabItem.Content>
-                    </TabItem>
                 </TabControl>
-                </StackPanel>
-            </Grid>
+            </StackPanel>
+        </Grid>
         <!--</StackPanel>-->
     </DockPanel>
 </Window>
