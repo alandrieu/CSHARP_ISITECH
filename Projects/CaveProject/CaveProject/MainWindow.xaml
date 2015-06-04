@@ -34,7 +34,29 @@
             </StackPanel>
         </ScrollViewer>
 
-        <StackPanel x:Name="myContainer" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2147483647" Grid.ColumnSpan="2147483647" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2147483647">
+            <StackPanel x:Name="myContainer" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2147483647" Grid.ColumnSpan="2147483647" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid>
+                <Grid.Resources>
+                    <Style x:Key="RowHeadersWithId" TargetType="{x:Type DataGridRowHeader}">
+                        <Setter Property="Content" Value="{Binding Id}" />
+                    </Style>
+                </Grid.Resources>
+                <DataGrid AutoGenerateColumns="False" 
+                    Margin="12" 
+                    Name="dataGrid1" 
+                    AlternatingRowBackground="AliceBlue" 
+                    RowHeaderStyle="{StaticResource RowHeadersWithId}" 
+                    HeadersVisibility="All" 
+                    CanUserAddRows="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
+                        <DataGridTextColumn Binding="{Binding Category}" Header="Category" />
+                        <DataGridTextColumn Binding="{Binding Price}" Header="Price" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
         </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

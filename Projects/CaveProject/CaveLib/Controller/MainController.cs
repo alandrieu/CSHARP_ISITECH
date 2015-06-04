@@ -14,9 +14,9 @@ namespace CaveLib.Controller
     public class MainController
     {
 
-        NHibernate.ISessionFactory sessionsController;
+        public NHibernate.ISessionFactory sessionsController;
+        public NHibernate.ISession session;
 
-        NHibernate.ISession session;
         Configuration cfg;
 
         public MainController()
@@ -34,7 +34,8 @@ namespace CaveLib.Controller
 
             session = sessionsController.OpenSession();
 
-            createProducts();
+            for (int i = 0; i < 50; i++ )
+                createProducts();
         }
 
         public void createProducts()

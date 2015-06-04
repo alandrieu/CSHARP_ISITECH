@@ -14,6 +14,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using CaveLib.Controller;
+using CaveLib.Model.Collection;
+using CaveLib.Model;
+using CaveLib.Bean;
+using System.Collections.Specialized;
+//using System.Collections.Specialized;
 
 namespace CaveProject
 {
@@ -24,12 +29,86 @@ namespace CaveProject
     {
         public List<Button> YourCollection { get; set; }
 
-        public MainController mainController;
+        private MainController mainController;
+
+        private EcObservableCollection<ProductView> products;
 
         public MainWindow()
         {
             InitializeComponent();
 
+            // Création des Button
+            this.CreateButton();
+            
+            mainController = new MainController();
+
+            this.InitHibernate();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void InitHibernate()
+        {
+            using (var session = mainController.sessionsController.OpenSession())
+            {
+                var criteria = session.CreateCriteria<Product>();
+                products = new EcObservableCollection<ProductView>();
+                foreach (Product c in criteria.List<Product>())
+                    products.Add(new ProductView(c));
+            }
+
+            products.CollectionChanged +=
+                new NotifyCollectionChangedEventHandler(products_CollectionChanged);
+            products.ItemChanged +=
+                new EcObservableCollection<ProductView>.EcObservableCollectionItemChangedEventHandler(products_ItemChanged);
+            dataGrid1.ItemsSource = products;
+        }
+
+        public void products_ItemChanged(object sender, EcObservableCollectionItemChangedEventArgs<ProductView> args)
+        {
+            using (var session = mainController.sessionsController.OpenSession())
+            {
+                session.SaveOrUpdate(args.Item.InnerProduct);
+                session.Flush();
+            }
+        }
+
+        public void products_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            using (var session = mainController.sessionsController.OpenSession())
+            {
+                switch (e.Action)
+                {
+                    case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
+                        foreach (ProductView c in e.OldItems)
+                        {
+                            session.Delete(c.InnerProduct);
+                            session.Flush();
+                        }
+                        break;
+                    case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
+                        foreach (ProductView c in e.NewItems)
+                            session.Save(c.InnerProduct);
+                        break;
+                    default:
+                        foreach (ProductView c in e.OldItems)
+                            session.SaveOrUpdate(c.InnerProduct);
+                        break;
+                }
+            }
+
+        }
+    
+    public void CreateButton()
+        {
             YourCollection = new List<Button>();
 
             IDictionary<String, String> oCollection = new Dictionary<String, String>();
@@ -65,17 +144,6 @@ namespace CaveProject
 
             this.DataContext = this;
 
-            mainController = new MainController();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //throw new NotImplementedException();
         }
     }
 }
