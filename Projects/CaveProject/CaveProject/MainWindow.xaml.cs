@@ -18,6 +18,7 @@ using CaveLib.Model.Collection;
 using CaveLib.Model;
 using CaveLib.Bean;
 using CaveProject.View;
+using CaveProject.CustomItem;
 using System.Collections.Specialized;
 //using System.Collections.Specialized;
 
@@ -28,11 +29,7 @@ namespace CaveProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Button> ButtonCollection { get; set; }
-
         private MainController mainController;
-
-        private EcObservableCollection<ProductView> products;
 
         private Context context;
 
@@ -43,17 +40,23 @@ namespace CaveProject
             InitializeComponent();
 
             // Création des Button
-            this.CreateButton();
+            //this.CreateButton();
 
             mainController = new MainController();
 
-            this.InitHibernate();
+            //this.InitHibernate();
 
             context = new Context();
 
             LaunchAuthMenu();
+
+            // Mise en place de l'icone
+            this.Icon = new BitmapImage(new Uri("./Ressources/iconeApp.ico", UriKind.Relative));
         }
 
+        /// <summary>
+        /// Lancement du menu d'authentification
+        /// </summary>
         private void LaunchAuthMenu()
         {
             loginView = new LoginWindow();
@@ -63,6 +66,15 @@ namespace CaveProject
 
             //loginView.Show();
             loginView.ShowDialog();
+
+            /*
+             MODE DEBUG
+             */
+            //// Récupération de l'utilisateur Courant
+            //context.Vendeur = new Vendeur() { Name ="ISitech Account"};
+
+            //// Mise à jour du menu
+            //headerAccountName.Header = context.Vendeur.Name;
         }
 
 
@@ -96,95 +108,49 @@ namespace CaveProject
             //throw new NotImplementedException();
         }
 
-        public void InitHibernate()
+        /// <summary>
+        /// Fermeture de l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MenuItemExit_Click(object sender, RoutedEventArgs e)
         {
-            using (var session = mainController.sessionsController.OpenSession())
-            {
-                var criteria = session.CreateCriteria<Product>();
-                products = new EcObservableCollection<ProductView>();
-                foreach (Product c in criteria.List<Product>())
-                    products.Add(new ProductView(c));
-            }
-
-            products.CollectionChanged +=
-                new NotifyCollectionChangedEventHandler(products_CollectionChanged);
-            products.ItemChanged +=
-                new EcObservableCollection<ProductView>.EcObservableCollectionItemChangedEventHandler(products_ItemChanged);
-            dataGrid1.ItemsSource = products;
+            this.Close();
         }
-
-        public void products_ItemChanged(object sender, EcObservableCollectionItemChangedEventArgs<ProductView> args)
+        
+        private void MenuItemBouteille_Click(object sender, RoutedEventArgs e)
         {
-            using (var session = mainController.sessionsController.OpenSession())
-            {
-                session.SaveOrUpdate(args.Item.InnerProduct);
-                session.Flush();
-            }
-        }
+            Console.Out.WriteLine("CLICK");
 
-        public void products_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            using (var session = mainController.sessionsController.OpenSession())
-            {
-                switch (e.Action)
-                {
-                    case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
-                        foreach (ProductView c in e.OldItems)
-                        {
-                            session.Delete(c.InnerProduct);
-                            session.Flush();
-                        }
-                        break;
-                    case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
-                        foreach (ProductView c in e.NewItems)
-                            session.Save(c.InnerProduct);
-                        break;
-                    default:
-                        foreach (ProductView c in e.OldItems)
-                            session.SaveOrUpdate(c.InnerProduct);
-                        break;
-                }
-            }
-
-        }
-
-        public void CreateButton()
-        {
-            ButtonCollection = new List<Button>();
-
-            IDictionary<String, String> oCollection = new Dictionary<String, String>();
-
-            oCollection.Add("Login", "");
-            oCollection.Add("Game", "");
-            oCollection.Add("Google", "https://www.google.fr/images/srpr/logo11w.png");
+            TabItem item = null;
+            Grid grid = null;
             
-            foreach (KeyValuePair<string, string> entry in oCollection)
+            try
             {
-                // You could parse your XML and update the collection
-                // Also implement INotifyPropertyChanged
+                // Creating the Grid (create Canvas or StackPanel or other panel here)
+                grid = new Grid() { HorizontalAlignment=HorizontalAlignment.Stretch, VerticalAlignment=VerticalAlignment.Stretch};
 
-                //Dummy Data for Demo 
-                Button objButton = new Button() { Height = 40, Width = 105, Name = entry.Key, Content = entry.Key };
+                grid.Children.Add(new BouteilleUserControl());
 
-                if (objButton.Name.Equals("Login"))
-                    objButton.Click += ButtonLogin_Click;
-                else
-                    objButton.Click += Button_Click;
+                item = new CloseableTabItem();
+                item.Header = "Liste des Bouteilles";
+                //item.Header = "Hello, this is the new tab item!";
+                item.Content = grid;            // OR : Add a UserControl containing all controls you like, OR use a ContentTemplate
 
-                ButtonCollection.Add(objButton);
-                //YourCollection.Add(new Button() { Height = 25, Width = 25 });
+                tabControl.Items.Add(item);
+                tabControl.SelectedItem = item;   // Setting focus to the new TabItem
             }
-
-            this.DataContext = this;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error creating the TabItem content! " + ex.Message);
+            }
+            finally
+            {
+                grid = null;
+                item = null;
+            }
+            
         }
-
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
-        {
-            View.LoginWindow loginView = new View.LoginWindow();
-
-            //loginView.Show();
-            loginView.ShowDialog();
-            //throw new NotImplementedException();
-        }
+        
     }
 }

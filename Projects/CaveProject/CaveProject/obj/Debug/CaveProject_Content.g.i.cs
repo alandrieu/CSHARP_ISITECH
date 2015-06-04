@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("iconeapp.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/iconeapp.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/shieldloginform.ico")]
 
 

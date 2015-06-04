@@ -34,6 +34,8 @@ namespace CaveProject.View
             InitializeComponent();
 
             oVendeurService = new VendeurService();
+
+            this.Icon = new BitmapImage(new Uri("./Ressources/shieldLoginForm.ico", UriKind.Relative));
         }
 
         /// <summary>

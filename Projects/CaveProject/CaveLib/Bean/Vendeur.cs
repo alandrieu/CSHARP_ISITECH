@@ -42,9 +42,6 @@ namespace CaveLib.Bean
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            //Vendeur leVendeur = (Vendeur)obj;
-
-            //if(this.Name.Equals(leVendeur.Name))
             return base.Equals(obj);
         }
 
