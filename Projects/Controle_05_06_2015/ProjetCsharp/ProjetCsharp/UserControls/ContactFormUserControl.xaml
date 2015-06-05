@@ -113,5 +113,8 @@
 
         <!-- Boutton pour la validation du profil -->
         <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="4" Grid.Row="3" Click="ButtonValider_Click">Valider</Button>
+
+        <!-- Boutton pour la Effacer les valeur du profil -->
+        <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="4" Grid.Row="2" Click="ButtonClear_Click">Clear</Button>
     </Grid>
 </UserControl>

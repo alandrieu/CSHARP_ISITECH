@@ -107,9 +107,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\ProjectCsharpLib\ProjectCsharpLib.csproj">
       <Project>{cca2fd38-b098-43bb-82d0-dd4063f5045c}</Project>

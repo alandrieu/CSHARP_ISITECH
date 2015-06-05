@@ -90,6 +90,33 @@ namespace ProjetCsharp.UserControls
         }
 
         /// <summary>
+        /// Remise à zéro du Forumlaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonClear_Click(object sender, EventArgs e)
+        {
+            TextBoxName.Text = "";
+            TextBoxPrenom.Text = "";
+            TextBoxEmail.Text = "";
+
+            TextBoxAge.Text = "";
+
+            ComboBoxGender.SelectedIndex = 0;
+            TextBoxAddress.Text = "";
+            TextBoxTelephoneNumber.Text = "";
+
+            ComboBoxCountry.SelectedIndex = 0;
+
+            TextBoxOwnDescription.Text = "";
+
+            // Social network account informations
+            TextBoxFaceBookAccount.Text = "";
+            TextBoxLinkedinAccount.Text = "";
+            TextBoxGooglePlusAccount.Text = "";
+        }
+
+        /// <summary>
         /// From String to Enum<T>
         /// Source : http://stackoverflow.com/questions/16100/how-do-i-convert-a-string-to-an-enum-in-c
         /// </summary>

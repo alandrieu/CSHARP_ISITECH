@@ -6,6 +6,7 @@
 
 ## Todo List :
 > Using NHibernate like /Projects/CaveProject
+> Manage Exceptions into Contact Form.
 
 # License :
   
