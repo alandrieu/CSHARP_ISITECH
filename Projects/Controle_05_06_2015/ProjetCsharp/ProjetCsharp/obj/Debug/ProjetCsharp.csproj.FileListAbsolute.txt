@@ -18,3 +18,7 @@ C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Con
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\obj\Debug\UserControls\ContactInformationUserControl.baml
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\obj\Debug\UserControls\ContactInformationUserControl.g.cs
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\bin\Debug\Ressources\facebook2.png
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\bin\Debug\NHibernate.dll
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\bin\Debug\Iesi.Collections.dll
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\bin\Debug\NHibernate.xml
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\bin\Debug\Iesi.Collections.xml

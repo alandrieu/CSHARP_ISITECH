@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                  assembly="ProjectCsharpLib"
+                  namespace="ProjectCsharpLib.Bean">
+
+  <class name="Contact" table="contacts">
+    <id name="Id">
+      <generator class="int" />
+    </id>
+
+    <property name="Nom" />
+    <property name="Prenom" />
+    <property name="Email" />
+    <property name="Age" />
+    <property name="Sexe" />
+    <property name="Address" />
+    <property name="Country" />
+    <property name="TelephoneNumber" />
+    <property name="OwnDescription" />
+    <property name="FaceBookAccount" />
+    <property name="GooglePlusAccount" />
+    <property name="LinkedinAccount" />
+  </class>
+
+</hibernate-mapping>
