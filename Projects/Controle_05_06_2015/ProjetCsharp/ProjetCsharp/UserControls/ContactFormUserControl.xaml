@@ -19,30 +19,96 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.ColumnSpan="2147483647" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" FontStyle="Italic">Formulaire de Contact</TextBlock>
+        <TextBlock Grid.ColumnSpan="2147483647" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" FontStyle="Italic">Formulaire de Contact</TextBlock>
 
         <!--  Nom -->
         <StackPanel Grid.Column="0" Grid.Row="1">
             <TextBlock >Nom</TextBlock>
-            <TextBox x:Name="TextBoxName">Nom</TextBox>
+            <TextBox x:Name="TextBoxName" MaxLength="15" MaxLines="1">Nom</TextBox>
         </StackPanel>
 
         <!--  Prenom -->
         <StackPanel Grid.Column="0" Grid.Row="2">
             <TextBlock>Prenom</TextBlock>
-            <TextBox x:Name="TextBoxPrenom">Prenom</TextBox>
+            <TextBox x:Name="TextBoxPrenom" MaxLength="15" MaxLines="1">Prenom</TextBox>
         </StackPanel>
 
+        <!-- Age -->
         <StackPanel Grid.Column="0" Grid.Row="3">
             <TextBlock>Age</TextBlock>
-            <TextBox x:Name="TextBoxAge">Age</TextBox>
-            
-            <ComboBox />
+            <TextBox x:Name="TextBoxAge" PreviewTextInput="NumberValidationTextBox">Age</TextBox>
         </StackPanel>
-        
+
+        <!--  Email -->
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock>Email</TextBlock>
+            <TextBox x:Name="TextBoxEmail" MaxLength="20" MaxLines="1">Email</TextBox>
+        </StackPanel>
+
+        <!--  Sexe -->
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <TextBlock>Gender</TextBlock>
+            <ComboBox x:Name="ComboBoxGender">
+                <ComboBoxItem>Male</ComboBoxItem>
+                <ComboBoxItem>Female</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <!--  Address -->
+        <StackPanel Grid.Column="1" Grid.Row="3">
+            <TextBlock>Address</TextBlock>
+            <TextBox x:Name="TextBoxAddress" MaxLength="50" MaxLines="3">Address</TextBox>
+        </StackPanel>
+
+        <!--  TelephoneNumber -->
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <TextBlock>TelephoneNumber</TextBlock>
+            <TextBox x:Name="TextBoxTelephoneNumber" MaxLength="13" MaxLines="1">+33</TextBox>
+        </StackPanel>
+
+        <!--  Coun try -->
+        <StackPanel Grid.Column="2" Grid.Row="2">
+            <TextBlock>Country</TextBlock>
+            <ComboBox x:Name="ComboBoxCountry">
+                <ComboBoxItem>France</ComboBoxItem>
+                <ComboBoxItem>USA</ComboBoxItem>
+                <ComboBoxItem>Japan</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <!--OwnDescription-->
+        <StackPanel Grid.Column="2" Grid.Row="3">
+            <TextBlock>OwnDescription</TextBlock>
+            <TextBox x:Name="TextBoxOwnDescription" MaxLength="150"></TextBox>
+        </StackPanel>
+
+        <!--FaceBookAccount-->
+        <StackPanel Grid.Column="3" Grid.Row="1">
+            <DockPanel>
+                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/fb_icon_325x325.png"></Image>
+                <TextBox x:Name="TextBoxFaceBookAccount" MaxLength="40" MaxLines="1">FaceBookAccount</TextBox>
+            </DockPanel>
+        </StackPanel>
+
+        <!--LinkedinAccount-->
+        <StackPanel Grid.Column="3" Grid.Row="2">
+            <DockPanel>
+                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/linkedin.png"></Image>
+                <TextBox x:Name="TextBoxLinkedinAccount" MaxLength="40" MaxLines="1">LinkedinAccount</TextBox>
+            </DockPanel>
+        </StackPanel>
+
+        <!--GooglePlusAccount-->
+        <StackPanel Grid.Column="3" Grid.Row="3">
+            <DockPanel>
+                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/googleplus.png"></Image>
+                <TextBox x:Name="TextBoxGooglePlusAccount" MaxLength="40" MaxLines="1">GooglePlusAccount</TextBox>
+            </DockPanel>
+        </StackPanel>
+
         <Button Grid.RowSpan="2147483647" Grid.Column="4" Grid.Row="1" Click="ButtonValider_Click"> Valider </Button>
     </Grid>
 </UserControl>

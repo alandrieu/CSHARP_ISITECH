@@ -22,10 +22,24 @@
         </Grid.RowDefinitions>
 
         <GridSplitter Grid.Row="0" Height="5" HorizontalAlignment="Stretch" />
+
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <TextBlock x:Name="TextBlockPrenom" >Prenom</TextBlock>
+            <TextBlock>Nom :</TextBlock>
+            <TextBlock x:Name="TextBlockNom" >Nom</TextBlock>
         </StackPanel>
         
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <TextBlock>Prenom :</TextBlock>
+            <TextBlock x:Name="TextBlockPrenom" >Prenom</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="3">
+            <TextBlock>Age :</TextBlock>
+            <TextBlock x:Name="TextBlockAge" >Age</TextBlock>
+        </StackPanel>
+
+
+
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="5" Grid.Row="2">
             <Button Click="ButtonRemove_Click">Remove</Button>
         </StackPanel>

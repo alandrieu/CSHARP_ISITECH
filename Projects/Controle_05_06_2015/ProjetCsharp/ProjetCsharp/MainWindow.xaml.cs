@@ -68,7 +68,6 @@ namespace ProjetCsharp
 
             // Supprimer une entrée dans la liste
             myOutputContainer.Children.Remove(newViewContact);
-            //myOutputContainer.Children.Add(newViewContact);
         }
     }
 }

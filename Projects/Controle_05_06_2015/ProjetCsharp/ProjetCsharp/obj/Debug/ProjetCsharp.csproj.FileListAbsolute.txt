@@ -17,3 +17,4 @@ C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Con
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\bin\Debug\ProjectCsharpLib.pdb
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\obj\Debug\UserControls\ContactInformationUserControl.baml
 C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\obj\Debug\UserControls\ContactInformationUserControl.g.cs
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjetCsharp\bin\Debug\Ressources\fb_icon_325x325.png

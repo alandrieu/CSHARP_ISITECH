@@ -35,7 +35,9 @@ namespace ProjetCsharp.UserControls
 
         public ContactInformationUserControl(Contact contact): this()
         {
-            TextBlockPrenom.Text = contact.Name;
+            TextBlockNom.Text = contact.Nom;
+            TextBlockPrenom.Text = contact.Prenom;
+            TextBlockAge.Text = contact.Age.ToString();
         }
 
         private void ButtonRemove_Click(object sender, EventArgs e)

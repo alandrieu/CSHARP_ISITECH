@@ -108,7 +108,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Ressources\" />
     <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +115,15 @@
       <Project>{cca2fd38-b098-43bb-82d0-dd4063f5045c}</Project>
       <Name>ProjectCsharpLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ressources\fb_icon_325x325.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\googleplus.png" />
+    <Resource Include="Ressources\linkedin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
