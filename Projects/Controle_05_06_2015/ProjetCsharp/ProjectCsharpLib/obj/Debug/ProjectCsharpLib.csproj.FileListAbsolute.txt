@@ -1,0 +1,5 @@
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjectCsharpLib\bin\Debug\ProjectCsharpLib.dll
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjectCsharpLib\bin\Debug\ProjectCsharpLib.pdb
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjectCsharpLib\obj\Debug\ProjectCsharpLib.csprojResolveAssemblyReference.cache
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjectCsharpLib\obj\Debug\ProjectCsharpLib.dll
+C:\Users\ded45\Documents\Visual Studio 2013\Projects\CSHARP_ISITECH\Projects\Controle_05_06_2015\ProjetCsharp\ProjectCsharpLib\obj\Debug\ProjectCsharpLib.pdb

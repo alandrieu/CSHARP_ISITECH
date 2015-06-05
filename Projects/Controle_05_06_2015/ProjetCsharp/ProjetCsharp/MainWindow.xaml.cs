@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using ProjectCsharpLib.Bean;
+using ProjetCsharp.UserControls;
+
 namespace ProjetCsharp
 {
     /// <summary>
@@ -35,8 +38,24 @@ namespace ProjetCsharp
         /// </summary>
         void InitializeComponentMainWindows()
         {
-            
+            ContactFormUserControl userControl = new UserControls.ContactFormUserControl();
 
+            userControl.AValide += ContactFromControl_AValide;
+
+            myInputContainer.Children.Add(userControl);
+        }
+
+        /// <summary>
+        /// Ajouter le nouveau contact dans la vue. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ContactFromControl_AValide(object sender, EventArgs e)
+        {
+            Contact newContact = (Contact)sender;
+
+            // Ajouter une entrer dans la liste
+            myOutputContainer.Children.Add(new ContactInformationUserControl(newContact));
         }
     }
 }
