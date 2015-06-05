@@ -1,11 +1,18 @@
 # Controle_05_06_2015
 
+## Created by,
+	Alexis Landrieu #https://github.com/alandrieu#
+
+## Requirements :
+ * .NET Framework 4.5
+	
 ## Description :
  * ProjectCsharp is a WPF Application with Framework .NET 4.5
  * This Application is to manage 'basic' Contact entity informations.
 
 ## Todo List :
 > Using NHibernate like /Projects/CaveProject
+
 > Manage Exceptions into Contact Form.
 
 # License :
