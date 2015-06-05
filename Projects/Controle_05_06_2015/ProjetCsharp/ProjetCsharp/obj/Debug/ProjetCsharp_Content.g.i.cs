@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/contact.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/facebook2.png")]
 
 

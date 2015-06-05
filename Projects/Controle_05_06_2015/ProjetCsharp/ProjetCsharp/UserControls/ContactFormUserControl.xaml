@@ -86,7 +86,7 @@
         </StackPanel>
 
         <!--FaceBookAccount-->
-        <StackPanel Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Center">
             <DockPanel>
                 <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/facebook.png"></Image>
                 <TextBox x:Name="TextBoxFaceBookAccount" MaxLength="40" MaxLines="1">FaceBookAccount</TextBox>

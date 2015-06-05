@@ -1,6 +1,11 @@
 # Controle_05_06_2015
 
-WPF Application with Framework .NET 4.5
+## Description :
+ProjectCsharp is a WPF Application with Framework .NET 4.5
+This Application is to manage 'basic' Contact entity informations.
+
+## Todo List :
+> Using NHibernate like /Projects/CaveProject
 
 # License :
   

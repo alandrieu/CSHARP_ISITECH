@@ -33,6 +33,10 @@ namespace ProjetCsharp.UserControls
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Construire un formulaire d'information sur un contact
+        /// </summary>
+        /// <param name="contact"></param>
         public ContactInformationUserControl(Contact contact): this()
         {
             TextBlockId.Text = contact.Id.ToString();
@@ -54,6 +58,11 @@ namespace ProjetCsharp.UserControls
             TextBlockLinkedinAccount.Text = contact.LinkedinAccount;
         }
 
+        /// <summary>
+        /// Demander la suppression d'un contact
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRemove_Click(object sender, EventArgs e)
         {
            // Send event remove

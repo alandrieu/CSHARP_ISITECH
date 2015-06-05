@@ -18,7 +18,13 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Grid.Row="0">My Contact APPLICATION</TextBlock>
+        <!-- Title -->
+        <StackPanel Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="0">
+            <DockPanel>
+                <Image MaxHeight="100" MaxWidth="100" Source="Ressources/contact.ico"></Image>
+                <TextBlock VerticalAlignment="Center" FontSize="48">My Contact APPLICATION</TextBlock>
+            </DockPanel>
+        </StackPanel>
 
         <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" />
 
