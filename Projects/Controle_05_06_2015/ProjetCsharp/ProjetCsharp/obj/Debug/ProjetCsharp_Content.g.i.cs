@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/googleplus.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/linkedin.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/contact.ico")]
 
 

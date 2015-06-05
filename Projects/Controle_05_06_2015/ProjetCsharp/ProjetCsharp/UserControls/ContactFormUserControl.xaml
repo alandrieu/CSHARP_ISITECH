@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    
+
     <Grid x:Name="myMainGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -86,15 +86,15 @@
         </StackPanel>
 
         <!--FaceBookAccount-->
-        <StackPanel Grid.Column="3" Grid.Row="1">
+        <StackPanel Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <DockPanel>
-                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/fb_icon_325x325.png"></Image>
+                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/facebook.png"></Image>
                 <TextBox x:Name="TextBoxFaceBookAccount" MaxLength="40" MaxLines="1">FaceBookAccount</TextBox>
             </DockPanel>
         </StackPanel>
 
         <!--LinkedinAccount-->
-        <StackPanel Grid.Column="3" Grid.Row="2">
+        <StackPanel Grid.Column="3" Grid.Row="2"  VerticalAlignment="Center">
             <DockPanel>
                 <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/linkedin.png"></Image>
                 <TextBox x:Name="TextBoxLinkedinAccount" MaxLength="40" MaxLines="1">LinkedinAccount</TextBox>
@@ -102,13 +102,13 @@
         </StackPanel>
 
         <!--GooglePlusAccount-->
-        <StackPanel Grid.Column="3" Grid.Row="3">
-            <DockPanel>
+        <StackPanel Grid.Column="3" Grid.Row="3" VerticalAlignment="Center">
+            <DockPanel >
                 <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/googleplus.png"></Image>
                 <TextBox x:Name="TextBoxGooglePlusAccount" MaxLength="40" MaxLines="1">GooglePlusAccount</TextBox>
             </DockPanel>
         </StackPanel>
 
-        <Button Grid.RowSpan="2147483647" Grid.Column="4" Grid.Row="1" Click="ButtonValider_Click"> Valider </Button>
+        <Button Grid.RowSpan="2147483647" Grid.Column="4" Grid.Row="1" Click="ButtonValider_Click">Valider</Button>
     </Grid>
 </UserControl>

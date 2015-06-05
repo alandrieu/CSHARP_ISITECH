@@ -18,32 +18,111 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
-        <GridSplitter Grid.Row="0" Height="5" HorizontalAlignment="Stretch" />
+        <!--<GridSplitter Grid.Row="0" Height="5" HorizontalAlignment="Stretch" Grid.ColumnSpan="55555" />-->
 
+        <!-- Id -->
         <StackPanel Grid.Column="0" Grid.Row="1">
-            <TextBlock>Nom :</TextBlock>
-            <TextBlock x:Name="TextBlockNom" >Nom</TextBlock>
+            <DockPanel>
+                <TextBlock>ID#</TextBlock>
+                <TextBlock x:Name="TextBlockId" ></TextBlock>
+            </DockPanel>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="0" Grid.Row="2">
-            <TextBlock>Prenom :</TextBlock>
-            <TextBlock x:Name="TextBlockPrenom" >Prenom</TextBlock>
+            <DockPanel>
+                <TextBlock>Nom :</TextBlock>
+                <TextBlock x:Name="TextBlockNom" >Nom</TextBlock>
+            </DockPanel>
         </StackPanel>
 
+        <!-- Prenom -->
         <StackPanel Grid.Column="0" Grid.Row="3">
-            <TextBlock>Age :</TextBlock>
-            <TextBlock x:Name="TextBlockAge" >Age</TextBlock>
+            <DockPanel>
+                <TextBlock>Prenom :</TextBlock>
+                <TextBlock x:Name="TextBlockPrenom" >Prenom</TextBlock>
+            </DockPanel>
         </StackPanel>
 
+        <!-- Age -->
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <DockPanel>
+                <TextBlock>Age :</TextBlock>
+                <TextBlock x:Name="TextBlockAge" >Age</TextBlock>
+            </DockPanel>
+        </StackPanel>
 
+        <!-- Email -->
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <DockPanel>
+                <TextBlock>Email :</TextBlock>
+                <TextBlock x:Name="TextBlockEmail" >Email</TextBlock>
+            </DockPanel>
+        </StackPanel>
+
+        <!-- Sexe -->
+        <StackPanel Grid.Column="1" Grid.Row="3">
+            <DockPanel>
+                <TextBlock>Sexe :</TextBlock>
+                <TextBlock x:Name="TextBlockSexe">Sexe</TextBlock>
+            </DockPanel>
+        </StackPanel>
+
+        <!-- Address -->
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <DockPanel>
+                <TextBlock>Address :</TextBlock>
+                <TextBlock x:Name="TextBlockAddress">Address</TextBlock>
+            </DockPanel>
+        </StackPanel>
+
+        <!-- TelephoneNumber -->
+        <StackPanel Grid.Column="2" Grid.Row="2">
+            <DockPanel>
+                <TextBlock>Address :</TextBlock>
+                <TextBlock x:Name="TextBlockTelephoneNumber">TelephoneNumber</TextBlock>
+            </DockPanel>
+        </StackPanel>
+
+        <!-- Country -->
+        <StackPanel Grid.Column="2" Grid.Row="3">
+            <DockPanel>
+                <TextBlock>Country :</TextBlock>
+                <TextBlock x:Name="TextBlockCountry">Country</TextBlock>
+            </DockPanel>
+        </StackPanel>
+
+        <!--FaceBookAccount-->
+        <StackPanel Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <DockPanel>
+                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/facebook.png"></Image>
+                <TextBlock x:Name="TextBlockFaceBookAccount">FaceBookAccount</TextBlock>
+            </DockPanel>
+        </StackPanel>
+
+        <!--LinkedinAccount-->
+        <StackPanel Grid.Column="3" Grid.Row="2"  VerticalAlignment="Center">
+            <DockPanel>
+                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/linkedin.png"></Image>
+                <TextBlock x:Name="TextBlockLinkedinAccount">LinkedinAccount</TextBlock>
+            </DockPanel>
+        </StackPanel>
+
+        <!--GooglePlusAccount-->
+        <StackPanel Grid.Column="3" Grid.Row="3" VerticalAlignment="Center">
+            <DockPanel >
+                <Image MaxHeight="20" MaxWidth="20" Source="/ProjetCsharp;component/Ressources/googleplus.png"></Image>
+                <TextBlock x:Name="TextBlockGooglePlusAccount">GooglePlusAccount</TextBlock>
+            </DockPanel>
+        </StackPanel>
 
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="5" Grid.Row="2">
             <Button Click="ButtonRemove_Click">Remove</Button>
         </StackPanel>
 
-        <GridSplitter Grid.Row="4" Height="5" HorizontalAlignment="Stretch" />        
+        <GridSplitter Grid.Row="5" Height="5" HorizontalAlignment="Stretch" Grid.ColumnSpan="2147483647"/>
     </Grid>
 </UserControl>
