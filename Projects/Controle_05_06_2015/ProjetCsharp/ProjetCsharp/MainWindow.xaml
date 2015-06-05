@@ -10,12 +10,12 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="150"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition Height="4*"/>
             <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="72" Grid.Row="0">My APPLICATION</TextBlock>
@@ -24,15 +24,12 @@
 
         <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="2" Grid.Column="0">
             <StackPanel x:Name="myInputContainer" Grid.Row="2">
-
-        </StackPanel>
+            </StackPanel>
         </ScrollViewer>
         
         <GridSplitter Grid.Row="3" Height="5" HorizontalAlignment="Stretch" />
 
-
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="4" Grid.Column="0">
-            
             <StackPanel x:Name="myOutputContainer">
                 <TextBlock FontSize="18"> Contact List</TextBlock>
             </StackPanel>

@@ -23,7 +23,6 @@ namespace ProjetCsharp.UserControls
     public partial class ContactFormUserControl : UserControl
     {
         public event ValiderHandler AValide;
-        public EventArgs e = null;
         public delegate void ValiderHandler(Contact contact, EventArgs e);
 
 

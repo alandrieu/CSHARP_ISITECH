@@ -25,8 +25,11 @@
         <StackPanel Grid.Column="0" Grid.Row="1">
             <TextBlock x:Name="TextBlockPrenom" >Prenom</TextBlock>
         </StackPanel>
+        
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="5" Grid.Row="2">
+            <Button Click="ButtonRemove_Click">Remove</Button>
+        </StackPanel>
 
-        <GridSplitter Grid.Row="4" Height="5" HorizontalAlignment="Stretch" />
-
+        <GridSplitter Grid.Row="4" Height="5" HorizontalAlignment="Stretch" />        
     </Grid>
 </UserControl>

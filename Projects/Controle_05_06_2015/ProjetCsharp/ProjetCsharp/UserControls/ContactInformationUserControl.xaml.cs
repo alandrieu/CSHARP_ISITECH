@@ -24,6 +24,10 @@ namespace ProjetCsharp.UserControls
     /// </summary>
     public partial class ContactInformationUserControl : UserControl
     {
+
+        public event RemoveHandler RemoveMe;
+        public delegate void RemoveHandler(ContactInformationUserControl userControl, EventArgs e);
+
         public ContactInformationUserControl()
         {
             InitializeComponent();
@@ -32,7 +36,12 @@ namespace ProjetCsharp.UserControls
         public ContactInformationUserControl(Contact contact): this()
         {
             TextBlockPrenom.Text = contact.Name;
+        }
 
+        private void ButtonRemove_Click(object sender, EventArgs e)
+        {
+           // Send event remove
+            RemoveMe(this, e);
         }
     }
 }

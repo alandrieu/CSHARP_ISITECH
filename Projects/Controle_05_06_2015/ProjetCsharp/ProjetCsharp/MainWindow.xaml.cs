@@ -54,8 +54,21 @@ namespace ProjetCsharp
         {
             Contact newContact = (Contact)sender;
 
-            // Ajouter une entrer dans la liste
-            myOutputContainer.Children.Add(new ContactInformationUserControl(newContact));
+            ContactInformationUserControl newViewContact = new ContactInformationUserControl(newContact);
+
+            newViewContact.RemoveMe += ContactInformationUserControl_RemoveMe;
+
+            // Ajouter une entrée dans la liste
+            myOutputContainer.Children.Add(newViewContact);
+        }
+
+        private void ContactInformationUserControl_RemoveMe(object sender, EventArgs e)
+        {
+            ContactInformationUserControl newViewContact = (ContactInformationUserControl)sender;
+
+            // Supprimer une entrée dans la liste
+            myOutputContainer.Children.Remove(newViewContact);
+            //myOutputContainer.Children.Add(newViewContact);
         }
     }
 }
