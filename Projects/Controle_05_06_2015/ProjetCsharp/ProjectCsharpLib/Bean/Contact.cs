@@ -32,7 +32,7 @@ namespace ProjectCsharpLib.Bean
         public enum SexeEnum
         {
             Male,
-            Femelle
+            Female
         }
 
         public enum CountryEnum
