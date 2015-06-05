@@ -18,7 +18,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <!-- Title -->
+        <!-- Title + Logo -->
         <StackPanel Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="0">
             <DockPanel>
                 <Image MaxHeight="100" MaxWidth="100" Source="Ressources/contact.ico"></Image>
@@ -28,14 +28,16 @@
 
         <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch" />
 
-        <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="2" Grid.Column="0">
+        <!-- Input Container -->
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible" Grid.Row="2" Grid.Column="0">
             <StackPanel x:Name="myInputContainer" Grid.Row="2">
             </StackPanel>
         </ScrollViewer>
         
         <GridSplitter Grid.Row="3" Height="5" HorizontalAlignment="Stretch" />
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="4" Grid.Column="0">
+        <!-- Output Container -->
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="4" Grid.Column="0">
             <StackPanel x:Name="myOutputContainer">
                 <TextBlock FontSize="18"> Contact List</TextBlock>
             </StackPanel>

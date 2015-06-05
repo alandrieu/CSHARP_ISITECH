@@ -19,7 +19,6 @@ namespace ProjetCsharp.UserControls
 {
     /// <summary>
     /// Interaction logic for ContactInformationUserControl.xaml
-    /// 
     /// Afficher les informations d'un Contact
     /// </summary>
     public partial class ContactInformationUserControl : UserControl
@@ -34,10 +33,12 @@ namespace ProjetCsharp.UserControls
         }
 
         /// <summary>
-        /// Construire un formulaire d'information sur un contact
+        /// Construire un formulaire d'information sur un contact,
+        /// Mapping manuel des Informations du contact dans la vue XAML.
         /// </summary>
         /// <param name="contact"></param>
-        public ContactInformationUserControl(Contact contact): this()
+        public ContactInformationUserControl(Contact contact)
+            : this()
         {
             TextBlockId.Text = contact.Id.ToString();
 
@@ -52,10 +53,28 @@ namespace ProjetCsharp.UserControls
             TextBlockTelephoneNumber.Text = contact.TelephoneNumber;
 
             TextBlockCountry.Text = contact.Country.ToString();
+
+            // Traitement des Liens vers les réseaux sociaux
             
-            TextBlockFaceBookAccount.Text = contact.FaceBookAccount;
-            TextBlockGooglePlusAccount.Text = contact.GooglePlusAccount;
-            TextBlockLinkedinAccount.Text = contact.LinkedinAccount;
+            //TextBlockFaceBookAccount.Text = contact.FaceBookAccount;
+            //TextBlockGooglePlusAccount.Text = contact.GooglePlusAccount;
+            //TextBlockLinkedinAccount.Text = contact.LinkedinAccount;
+
+            try
+            {
+                HyperLinkFaceBookAccount.RequestNavigate += Hyperlink_RequestNavigate;
+                HyperLinkFaceBookAccount.NavigateUri = new Uri(contact.FaceBookAccount);
+
+                HyperLinkGooglePlusAccount.RequestNavigate += Hyperlink_RequestNavigate;
+                HyperLinkGooglePlusAccount.NavigateUri = new Uri(contact.GooglePlusAccount);
+
+                HyperLinkLinkedinAccount.RequestNavigate += Hyperlink_RequestNavigate;
+                HyperLinkLinkedinAccount.NavigateUri = new Uri(contact.LinkedinAccount);
+            }
+            catch (Exception ex)
+            {
+                // TODO
+            }
         }
 
         /// <summary>
@@ -65,8 +84,21 @@ namespace ProjetCsharp.UserControls
         /// <param name="e"></param>
         private void ButtonRemove_Click(object sender, EventArgs e)
         {
-           // Send event remove
+            // Send event remove
             RemoveMe(this, e);
+        }
+
+        /// <summary>
+        /// Ouvrir le naviguateur à l'URL définie dans l'hyperlien
+        /// Source : http://stackoverflow.com/questions/531621/how-to-make-a-simple-hyperlink-in-xaml
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Hyperlink hyperLink = (Hyperlink)sender;
+
+            System.Diagnostics.Process.Start(hyperLink.NavigateUri.AbsoluteUri);
         }
     }
 }

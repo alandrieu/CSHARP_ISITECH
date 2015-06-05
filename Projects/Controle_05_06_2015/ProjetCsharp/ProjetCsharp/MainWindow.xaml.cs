@@ -46,7 +46,7 @@ namespace ProjetCsharp
         }
 
         /// <summary>
-        /// Ajouter le nouveau contact dans la vue. 
+        /// Ajouter le nouveau contact dans la vue 'myOutputContainer', et s'abonne à l'événement RemoveMe du UserControl. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -62,6 +62,11 @@ namespace ProjetCsharp
             myOutputContainer.Children.Add(newViewContact);
         }
 
+        /// <summary>
+        /// Supprime le UserControl du container
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ContactInformationUserControl_RemoveMe(object sender, EventArgs e)
         {
             ContactInformationUserControl newViewContact = (ContactInformationUserControl)sender;

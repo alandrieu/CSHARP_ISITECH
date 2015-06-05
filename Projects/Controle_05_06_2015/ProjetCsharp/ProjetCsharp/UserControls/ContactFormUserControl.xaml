@@ -6,6 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
+    <!-- Main Grid-->
     <Grid x:Name="myMainGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -22,6 +23,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- Title -->
         <TextBlock Grid.ColumnSpan="2147483647" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" FontStyle="Italic">Formulaire de Contact</TextBlock>
 
         <!--  Nom -->
@@ -69,7 +71,7 @@
             <TextBox x:Name="TextBoxTelephoneNumber" MaxLength="13" MaxLines="1">+33</TextBox>
         </StackPanel>
 
-        <!--  Coun try -->
+        <!--  Country -->
         <StackPanel Grid.Column="2" Grid.Row="2">
             <TextBlock>Country</TextBlock>
             <ComboBox x:Name="ComboBoxCountry" >
@@ -109,6 +111,7 @@
             </DockPanel>
         </StackPanel>
 
-        <Button Grid.RowSpan="2147483647" Grid.Column="4" Grid.Row="1" Click="ButtonValider_Click">Valider</Button>
+        <!-- Boutton pour la validation du profil -->
+        <Button VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="4" Grid.Row="3" Click="ButtonValider_Click">Valider</Button>
     </Grid>
 </UserControl>
